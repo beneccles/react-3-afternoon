@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import './Edit.css';
 
 //////////////////////////////////////////////////////// THIS COMPONENT IS BEING RENDERED IN THE *POST* COMPONENT
@@ -19,8 +18,9 @@ export default class Edit extends Component {
     this.setState({ text: value });
   }
 
-  updatePost() {
-
+  updatePost(id, text) {
+    this.props.updatePostFn(id, text);
+    this.props.hideEdit();
   }
 
   render() {

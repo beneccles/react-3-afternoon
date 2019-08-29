@@ -21,7 +21,14 @@ export default class Compose extends Component {
   }
 
   createPost() {
+    const { text } = this.state;
+    const { createPostFn } = this.props;
 
+    // Submit the text
+    createPostFn( text);
+
+    // Then reset the text box.
+    this.setState({ text: ''})
   }
 
   render() {
